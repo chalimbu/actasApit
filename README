@@ -1,0 +1,293 @@
+the project is not finished
+--sorry by my english
+I upload this to familiarize me with github
+this project until now is made with 
+-xampp(mysql of ends being mariadb)
+-netbeans
+-in a windows 7 64 bits pc
+
+for purpose of testing is made with a local database and you can run this (after install xampp with mysql)to prove it 
+
+cd ..
+cd ..
+cd xampp
+cd mysql\bin
+mysqld
+::in another terminal
+cd ..
+cd ..
+cd xampp\mysql\bin
+mysql -u root -p
+create database acta1;
+use acta2
+
+--insertada
+CREATE TABLE ACTA(
+ACTAID INT NOT NULL,
+FECHA DATE NOT NULL,
+LUGAR VARCHAR(150) NOT NULL,
+ORDEN_DEL_DIA VARCHAR(500) NOT NULL,
+DESARROLO VARCHAR(3000) NOT NULL,
+RUTA VARCHAR(500),
+
+PRIMARY KEY(ACTAID)
+);
+
+--insertada
+CREATE TABLE TIPO_ASISTENTE(
+TIPO_ID INT NOT NULL,
+TIPO VARCHAR(30) NOT NULL,
+PRIMARY KEY(TIPO_ID)
+);
+
+--insertada
+CREATE TABLE PROFESOR(
+PROFESOR_ID VARCHAR(12) NOT NULL,
+NOMBRE VARCHAR(150) NOT NULL,
+PRIMARY KEY(PROFESOR_ID)
+);
+
+
+CREATE TABLE ASISTENTE(
+NUMERO_ACTA INT NOT NULL,
+ID_PROFESOR VARCHAR(12) NOT NULL,
+TIPO_ASISTENTE INT NOT NULL,
+
+FOREIGN KEY(NUMERO_ACTA) REFERENCES ACTA(ACTAID),
+FOREIGN KEY(ID_PROFESOR) REFERENCES PROFESOR(PROFESOR_ID),
+FOREIGN KEY(TIPO_ASISTENTE) REFERENCES TIPO_ASISTENTE(TIPO_ID)
+);
+
+--insertada
+CREATE TABLE USUARIOS_CON_PERMISOS(
+  USUARIO VARCHAR(100),
+  CLAVE VARCHAR(100)
+);
+
+INSERT INTO USUARIOS_CON_PERMISOS VALUES('ADMIN','ADMIN123');
+
+INSERT INTO TIPO_ASISTENTE VALUES(1,'coordinadora');
+INSERT INTO TIPO_ASISTENTE VALUES(2,'docente');
+INSERT INTO TIPO_ASISTENTE VALUES(3,'auxiliar_administrativa');
+INSERT INTO TIPO_ASISTENTE VALUES(4,'auxente_sin_excusa');
+
+insert into PROFESOR values(93201,'jose perez');
+insert into PROFESOR values(93202,'absalon gonzales');
+insert into PROFESOR values(93203,'absalon moreno');
+insert into PROFESOR values(93204,'de jesus gonzales');
+insert into PROFESOR values(93205,'juan lopez');
+insert into PROFESOR values(93206,'de jesus ramirez');
+insert into PROFESOR values(93207,'de jesus garcia');
+insert into PROFESOR values(93208,'moises hernandez');
+insert into PROFESOR values(93209,'de jesus rodriguez');
+insert into PROFESOR values(93210,'aaron rodriguez');
+insert into PROFESOR values(93211,'jose diaz');
+insert into PROFESOR values(93212,'aaron rodriguez');
+insert into PROFESOR values(93213,'antonio sanchez');
+insert into PROFESOR values(93214,'moises muñoz');
+insert into PROFESOR values(93215,'carlos ramirez');
+insert into PROFESOR values(93216,'aaron moreno');
+insert into PROFESOR values(93217,'juan rodriguez');
+insert into PROFESOR values(93218,'aaron moreno');
+insert into PROFESOR values(93219,'maria garcia');
+insert into PROFESOR values(93220,'enrique rodriguez');
+insert into PROFESOR values(93221,'ana lopez');
+insert into PROFESOR values(93222,'luis muñoz');
+insert into PROFESOR values(93223,'alberto hernandez');
+insert into PROFESOR values(93224,'luis garcia');
+insert into PROFESOR values(93225,'juan garcia');
+insert into PROFESOR values(93226,'antonio muñoz');
+insert into PROFESOR values(93227,'luis diaz');
+insert into PROFESOR values(93228,'antonio perez');
+insert into PROFESOR values(93229,'enrique gomez');
+insert into PROFESOR values(93230,'absalon garcia');
+insert into PROFESOR values(93231,'aaron hernandez');
+insert into PROFESOR values(93232,'juan perez');
+insert into PROFESOR values(93233,'juan diaz');
+insert into PROFESOR values(93234,'juan rodriguez');
+insert into PROFESOR values(93235,'ana gonzales');
+insert into PROFESOR values(93236,'carlos gomez');
+insert into PROFESOR values(93237,'enrique rodriguez');
+insert into PROFESOR values(93238,'jose diaz');
+insert into PROFESOR values(93239,'moises martinez');
+insert into PROFESOR values(93240,'absalon moreno');
+insert into PROFESOR values(93241,'alberto diaz');
+insert into PROFESOR values(93242,'maria lopez');
+insert into PROFESOR values(93243,'alberto gonzales');
+insert into PROFESOR values(93244,'aaron perez');
+insert into PROFESOR values(93245,'luis gonzales');
+insert into PROFESOR values(93246,'absalon moreno');
+insert into PROFESOR values(93247,'antonio martinez');
+insert into PROFESOR values(93248,'jose moreno');
+insert into PROFESOR values(93249,'luz sanchez');
+insert into PROFESOR values(93250,'moises rodriguez');
+insert into PROFESOR values(93251,'alberto garcia');
+insert into PROFESOR values(93252,'jose hernandez');
+insert into PROFESOR values(93253,'juan moreno');
+insert into PROFESOR values(93254,'antonio gonzales');
+insert into PROFESOR values(93255,'juan martinez');
+insert into PROFESOR values(93256,'enrique muñoz');
+insert into PROFESOR values(93257,'carlos garcia');
+insert into PROFESOR values(93258,'juan gonzales');
+insert into PROFESOR values(93259,'de jesus ramirez');
+insert into PROFESOR values(93260,'ana ramirez');
+insert into PROFESOR values(93261,'juan gonzales');
+insert into PROFESOR values(93262,'luis moreno');
+insert into PROFESOR values(93263,'juan lopez');
+insert into PROFESOR values(93264,'maria sanchez');
+insert into PROFESOR values(93265,'maria ramirez');
+insert into PROFESOR values(93266,'moises gonzales');
+insert into PROFESOR values(93267,'jose diaz');
+insert into PROFESOR values(93268,'juan hernandez');
+insert into PROFESOR values(93269,'absalon gonzales');
+insert into PROFESOR values(93270,'maria rojas');
+insert into PROFESOR values(93271,'luz gonzales');
+insert into PROFESOR values(93272,'enrique perez');
+insert into PROFESOR values(93273,'antonio ramirez');
+insert into PROFESOR values(93274,'juan gonzales');
+insert into PROFESOR values(93275,'carlos garcia');
+insert into PROFESOR values(93276,'antonio sanchez');
+insert into PROFESOR values(93277,'aaron martinez');
+insert into PROFESOR values(93278,'luis moreno');
+insert into PROFESOR values(93279,'moises perez');
+insert into PROFESOR values(93280,'ana gomez');
+insert into PROFESOR values(93281,'aaron martinez');
+insert into PROFESOR values(93282,'de jesus muñoz');
+insert into PROFESOR values(93283,'aaron gonzales');
+insert into PROFESOR values(93284,'antonio diaz');
+insert into PROFESOR values(93285,'jose rojas');
+insert into PROFESOR values(93286,'carlos rojas');
+insert into PROFESOR values(93287,'aaron garcia');
+insert into PROFESOR values(93288,'absalon rojas');
+insert into PROFESOR values(93289,'enrique muñoz');
+insert into PROFESOR values(93290,'absalon rojas');
+insert into PROFESOR values(93291,'alberto rojas');
+insert into PROFESOR values(93292,'de jesus diaz');
+insert into PROFESOR values(93293,'absalon rojas');
+insert into PROFESOR values(93294,'de jesus rodriguez');
+insert into PROFESOR values(93295,'moises ramirez');
+insert into PROFESOR values(93296,'maria garcia');
+insert into PROFESOR values(93297,'luz perez');
+insert into PROFESOR values(93298,'maria gonzales');
+insert into PROFESOR values(93299,'absalon garcia');
+
+insert into ACTA values(1,'2016-7-19 11:55:36','p13-103','**********','*******');
+insert into ACTA values(2,'2017-10-17 6:36:9','p13-104','**********','*******');
+insert into ACTA values(3,'1992-2-2 4:14:47','p13-106','**********','*******');
+insert into ACTA values(4,'1993-1-8 14:25:45','p17-205','**********','*******');
+insert into ACTA values(5,'2010-4-25 10:37:5','p17-101','**********','*******');
+insert into ACTA values(6,'1992-2-4 13:54:21','p40-203','**********','*******');
+insert into ACTA values(7,'2007-4-6 17:8:2','p17-202','**********','*******');
+insert into ACTA values(8,'2005-7-23 15:15:34','p17-204','**********','*******');
+insert into ACTA values(9,'2001-3-27 9:52:45','p17-203','**********','*******');
+insert into ACTA values(10,'1989-9-21 21:32:59','p40-201','**********','*******');
+insert into ACTA values(11,'2011-10-4 14:41:30','p17-104','**********','*******');
+insert into ACTA values(12,'1994-7-13 8:58:25','p17-202','**********','*******');
+insert into ACTA values(13,'2016-2-20 10:53:50','p17-102','**********','*******');
+insert into ACTA values(14,'1985-9-18 18:9:25','p40-201','**********','*******');
+insert into ACTA values(15,'2010-3-10 6:49:39','p17-102','**********','*******');
+insert into ACTA values(16,'2002-9-21 20:48:53','p40-202','**********','*******');
+insert into ACTA values(17,'1992-5-10 21:28:10','p17-206','**********','*******');
+insert into ACTA values(18,'2017-8-13 3:10:10','p17-102','**********','*******');
+insert into ACTA values(19,'2009-5-22 8:42:33','p17-201','**********','*******');
+insert into ACTA values(20,'2008-3-4 16:10:25','p17-101','**********','*******');
+
+insert into ASISTENTE values(18,'93231',1);
+insert into ASISTENTE values(1,'93274',4);
+insert into ASISTENTE values(1,'93210',2);
+insert into ASISTENTE values(19,'93247',3);
+insert into ASISTENTE values(17,'93201',1);
+insert into ASISTENTE values(15,'93294',1);
+insert into ASISTENTE values(8,'93298',3);
+insert into ASISTENTE values(2,'93291',2);
+insert into ASISTENTE values(7,'93214',4);
+insert into ASISTENTE values(11,'93260',4);
+insert into ASISTENTE values(17,'93225',3);
+insert into ASISTENTE values(19,'93241',1);
+insert into ASISTENTE values(14,'93283',4);
+insert into ASISTENTE values(17,'93233',2);
+insert into ASISTENTE values(16,'93288',3);
+insert into ASISTENTE values(5,'93230',1);
+insert into ASISTENTE values(6,'93275',2);
+insert into ASISTENTE values(7,'93291',4);
+insert into ASISTENTE values(5,'93286',2);
+insert into ASISTENTE values(2,'93248',2);
+insert into ASISTENTE values(6,'93212',2);
+insert into ASISTENTE values(9,'93239',1);
+insert into ASISTENTE values(9,'93274',4);
+insert into ASISTENTE values(19,'93240',2);
+insert into ASISTENTE values(9,'93211',3);
+insert into ASISTENTE values(2,'93240',2);
+insert into ASISTENTE values(13,'93271',4);
+insert into ASISTENTE values(3,'93260',2);
+insert into ASISTENTE values(6,'93279',2);
+insert into ASISTENTE values(4,'93232',2);
+insert into ASISTENTE values(14,'93289',3);
+insert into ASISTENTE values(1,'93278',1);
+insert into ASISTENTE values(10,'93258',4);
+insert into ASISTENTE values(19,'93210',2);
+insert into ASISTENTE values(19,'93208',4);
+insert into ASISTENTE values(2,'93248',3);
+insert into ASISTENTE values(20,'93280',4);
+insert into ASISTENTE values(7,'93203',1);
+insert into ASISTENTE values(18,'93282',2);
+insert into ASISTENTE values(20,'93298',3);
+insert into ASISTENTE values(17,'93240',4);
+insert into ASISTENTE values(8,'93226',2);
+insert into ASISTENTE values(8,'93277',3);
+insert into ASISTENTE values(19,'93287',4);
+insert into ASISTENTE values(6,'93216',2);
+insert into ASISTENTE values(7,'93258',4);
+insert into ASISTENTE values(7,'93259',3);
+insert into ASISTENTE values(19,'93223',2);
+insert into ASISTENTE values(15,'93227',2);
+insert into ASISTENTE values(14,'93247',2);
+insert into ASISTENTE values(20,'93276',2);
+insert into ASISTENTE values(5,'93284',3);
+insert into ASISTENTE values(3,'93268',1);
+insert into ASISTENTE values(16,'93220',3);
+insert into ASISTENTE values(2,'93231',2);
+insert into ASISTENTE values(14,'93201',3);
+insert into ASISTENTE values(19,'93229',1);
+insert into ASISTENTE values(16,'93219',4);
+insert into ASISTENTE values(12,'93206',3);
+insert into ASISTENTE values(12,'93215',4);
+insert into ASISTENTE values(15,'93287',2);
+insert into ASISTENTE values(13,'93222',4);
+insert into ASISTENTE values(9,'93283',4);
+insert into ASISTENTE values(6,'93262',4);
+insert into ASISTENTE values(1,'93289',4);
+insert into ASISTENTE values(4,'93296',3);
+insert into ASISTENTE values(8,'93225',4);
+insert into ASISTENTE values(16,'93250',2);
+insert into ASISTENTE values(5,'93266',2);
+insert into ASISTENTE values(19,'93209',1);
+insert into ASISTENTE values(6,'93259',1);
+insert into ASISTENTE values(18,'93274',1);
+insert into ASISTENTE values(9,'93243',4);
+insert into ASISTENTE values(6,'93201',2);
+insert into ASISTENTE values(20,'93233',4);
+insert into ASISTENTE values(11,'93231',2);
+insert into ASISTENTE values(10,'93255',3);
+insert into ASISTENTE values(15,'93272',4);
+insert into ASISTENTE values(20,'93222',1);
+insert into ASISTENTE values(14,'93231',4);
+insert into ASISTENTE values(15,'93219',3);
+insert into ASISTENTE values(16,'93250',4);
+insert into ASISTENTE values(9,'93219',2);
+insert into ASISTENTE values(15,'93249',4);
+insert into ASISTENTE values(9,'93242',4);
+insert into ASISTENTE values(4,'93225',2);
+insert into ASISTENTE values(19,'93206',1);
+insert into ASISTENTE values(17,'93271',3);
+insert into ASISTENTE values(19,'93210',1);
+insert into ASISTENTE values(6,'93231',4);
+insert into ASISTENTE values(3,'93275',3);
+insert into ASISTENTE values(5,'93230',3);
+insert into ASISTENTE values(12,'93237',1);
+insert into ASISTENTE values(14,'93242',2);
+insert into ASISTENTE values(8,'93289',3);
+insert into ASISTENTE values(14,'93221',3);
+insert into ASISTENTE values(8,'93209',3);
+insert into ASISTENTE values(10,'93254',1);
+insert into ASISTENTE values(4,'93253',2);
