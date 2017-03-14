@@ -49,9 +49,9 @@ public class Select {
     Statement st;
                 try{
                 st=con.createStatement();
-                rs=st.executeQuery("select * from "+from+
-                        "where "+ where1+"="+equal1+" AND"
-                        +where2+"="+equal2+";");
+                rs=st.executeQuery("SELECT * FROM "+from+
+                        " WHERE "+ where1+"='"+equal1+"' AND "
+                        +where2+"='"+equal2+"';");
                     if(rs.next()){
                         return true;
                     }

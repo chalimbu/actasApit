@@ -53,7 +53,7 @@ public class FrmVerActas extends javax.swing.JFrame{
         if(v.validarNumeros(numero)){
             //busqueda
             Conexion con=new Conexion();
-            Connection cone=con.conectar("acta2","root","");
+            Connection cone=con.conectar();
             Select select=new Select(cone);
             ResultSet rs=select.select("ACTA", "ACTAID", numero);
             llenarTabla(rs,cone);
@@ -114,7 +114,7 @@ public class FrmVerActas extends javax.swing.JFrame{
     
     private void llenarTablaInicial() {
       Conexion con=new Conexion();
-      Connection cone=con.conectar("acta2","root","");
+      Connection cone=con.conectar();
       Select select=new Select(cone);
       ResultSet rs=select.selectTabla("ACTA");
       llenarTabla(rs,cone);
