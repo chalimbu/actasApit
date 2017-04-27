@@ -17,11 +17,19 @@ import javax.swing.JOptionPane;
  *
  * @author sebastian
  */
-public class Conexion {
- public Connection conectar(String table,String user,String pass){
+ public class Conexion {
+     
+ public String table,user,pass;   
+    
+   public Conexion(){
+        this.table="acta5";
+        this.user="root";
+        this.pass="";
+    }
+    
+    public Connection conectar(){
      Connection conn=null;
      try {
-         
          String url = "jdbc:mysql://127.0.0.1:3306/"+table+"?user="+user+"&password="+pass;
          Driver d = (Driver)Class.forName("com.mysql.jdbc.Driver").newInstance();
          conn = DriverManager.getConnection(url);
